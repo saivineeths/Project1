@@ -12,25 +12,49 @@ Window {
         height: parent.height
         width: parent.width
         Row{
+            anchors.centerIn: parent
             CustomButton{
-
-
-            }
-            CustomButton{
-                 property string buttonimage: buttonMain
-                Image {
-                    height:buttonimage/2
-                    width: buttonimage/2
-                    source: "thumbs-up.png"
+                Text {
+                    id: name
+                    font.pixelSize: 25
+                    text: "Text"
+                    anchors.centerIn: parent
                 }
 
+
             }
             CustomButton{
-                 property string buttonimage: buttonMain
+
+                Column{
+                    spacing: 4
+                    anchors.centerIn: parent
+
+                Image {
+//                    anchors.top: parent.top
+//                    anchors.horizontalCenter: parent.horizontalCenter
+                    height:40
+                    width: 60
+                    source: "thumbs-up.png"
+                }
+                Text {
+                    id: icon
+                    font.pixelSize: 25
+                    text:"Text"
+//                    anchors.centerIn: parent
+                }
+                }
+
+
+
+
+            }
+            CustomButton{
+
                 buttonText: ""
                 Image {
-                    height:buttonimage/2
-                    width: buttonimage/2
+                    anchors.centerIn: parent
+                    height:40
+                    width: 60
                     source: "thumbs-up.png"
                 }
 
