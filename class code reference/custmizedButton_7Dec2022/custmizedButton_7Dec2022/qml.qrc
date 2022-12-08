@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ButtonBase.qml</file>
+        <file>TextButton.qml</file>
+        <file>IconButton.qml</file>
+        <file>Airaa.png</file>
+    </qresource>
+</RCC>
