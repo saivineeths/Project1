@@ -17,6 +17,7 @@ Row{
         name:"textButton"
     }
     IconButton{
+        
         iconPath:"qrc:/Airaa.png"
     }
 }
