@@ -12,7 +12,7 @@ Row{
     anchors.centerIn: parent
     ButtonBase{
         id:one
-       control_enable: handeler.base_Button_handeler
+       control_enable:  handeler.base_Button_handeler
        onClicked: {
            console.log("thankyou")
            handeler.image_Button_handler=!handeler.image_Button_handler
