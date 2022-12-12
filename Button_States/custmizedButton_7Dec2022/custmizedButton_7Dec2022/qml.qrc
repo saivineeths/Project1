@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ButtonBase.qml</file>
+        <file>TextButton.qml</file>
+        <file>Button.qml</file>
+        <file>Airaa.png</file>
+        <file>TextIcon.qml</file>
+        <file>batteryimg.png</file>
+        <file>image.png</file>
+        <file>IconButton.qml</file>
+    </qresource>
+</RCC>
