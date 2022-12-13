@@ -5,40 +5,49 @@ Window {
     width: 640
     height: 480
     visible: true
-    color:"green"
+    color:"maroon"
     title: qsTr("Hello World")
 Row{
     spacing:10
+    anchors.centerIn: parent
     ButtonBase{
         id:one
+        control_enable: handeler.base_Button_handeler
+        onClicked:{
+             handeler.image_Button_handler=!handeler.image_Button_handler
+        }
 
     }
     TextButton{
-        name:"textButton"
+        id:textbutton
+        name:"textbutton"
+        control_enable: handeler.text_Button_handeler
+        onClicked: {
+            console.log((textbuton.name))
+            handeler.text_image_Buttom_handler=!handeler.text_image_Buttom_handler
+        }
+
+    }
+
+    TextIcon{
+        name:"Battery"
+        image1:"qrc:/batteryimg.png"
+        control_enable: handeler.text_image_Button_handler
+        onClicked: {
+            console.log("new button")
+            handeler.text_Button_handeler=!handeler.text_Button_handeler
+        }
     }
     IconButton{
-        
-        iconPath:"qrc:/Airaa.png"
+        iconPath:"qrc:/batteryimg.png"
+        control_enable: handeler.image_Button_handler
+        onClicked: {
+            console.log("button clicked")
+            handeler.base_Button_handeler=!handeler.base_Button_handeler;
+        }
+
     }
+
+
 }
-    Button{
-        id:newol
-        anchors.bottom: parent.bottom
-        onClicked: {
-            mousearea.enabled=false
-            console.log("disables")
-        }
-
-    }
-    Button{
-        id:newop
-        anchors.bottom: parent.bottom
-        anchors.right:parent.right
-        onClicked: {
-            mousearea.enabled=true
-            console.log("disables")
-        }
-
-    }
-
 }

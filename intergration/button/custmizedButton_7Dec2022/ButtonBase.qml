@@ -4,12 +4,17 @@ import QtQuick.Controls 2.15
 Rectangle {
 
     property bool control_enable: true
+    property color onPressed: "black"
+    property color normal:"red"
+    property color disabled:"grey"
+    property color border1:"white"
+    property color onclicked:"maroon"
+    property color hovered:"blue"
     signal clicked();
 
     id: myRect
     width: 100; height: 50
     radius:5
-    //    color: "black"
     state: "normal"
     MouseArea
     {
@@ -17,7 +22,6 @@ Rectangle {
         anchors.fill: parent
         enabled:control_enable
         hoverEnabled: true
-        //onPressAndHold:myRect.state="onPressed"
         onEntered: myRect.state="hovered"
         onExited: myRect.state="normal"
         onPressed:myRect.state="onPressed"
@@ -31,26 +35,27 @@ Rectangle {
             name: "onPressed"
             PropertyChanges {
                 target: myRect;
-                color: "green" }
+                color: onPressed
+                border.color:border1}
         },
         State {
             name: "normal"
             PropertyChanges {
                 target: myRect;
-                color: mouseArea.enabled?"red":"grey"
+                color: mouseArea.enabled?normal:disabled
             }
         },
         State {
             name: "clicked"
             PropertyChanges {
                 target: myRect;
-                color: "yellow" }
+                color: onclicked }
         },
         State {
             name: "hovered"
             PropertyChanges {
                 target: myRect;
-                color: "blue"
+                color: hovered
                 border.width: 2}
         }
     ]

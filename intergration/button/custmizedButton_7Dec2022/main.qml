@@ -13,6 +13,10 @@ Row{
     ButtonBase{
         id:one
        control_enable:  handeler.base_Button_handeler
+       normal:"white"
+       hovered: "yellow"
+       onPressed: "green"
+
        onClicked: {
            console.log("thankyou")
            handeler.image_Button_handler=!handeler.image_Button_handler

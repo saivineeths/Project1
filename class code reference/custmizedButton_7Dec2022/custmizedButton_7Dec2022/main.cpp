@@ -1,5 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include "button_class.h"
+#include <QQmlContext>
 
 
 int main(int argc, char *argv[])
@@ -16,6 +18,8 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
+    Button_Class *button_handler=new Button_Class();
+    engine.rootContext()->setContextProperty("handeler",button_handler);
     engine.load(url);
 
     return app.exec();
