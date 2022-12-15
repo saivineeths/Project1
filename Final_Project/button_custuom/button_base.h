@@ -6,15 +6,20 @@
 class button_base : public QObject
 {
     Q_OBJECT
+
+    // Declaring seperate Boolean Q_Property for each Button to set the Enabled Status
     Q_PROPERTY(bool base_Button_enabler READ base_Button_enabler WRITE setBase_Button_enabler NOTIFY base_Button_enablerChanged)
     Q_PROPERTY(bool text_Button_enabler READ text_Button_enabler WRITE setText_Button_enabler NOTIFY text_Button_enablerChanged)
     Q_PROPERTY(bool iocn_Button_enabler READ iocn_Button_enabler WRITE setIocn_Button_enabler NOTIFY iocn_Button_enablerChanged)
     Q_PROPERTY(bool text_Icon_Button_enabler READ text_Icon_Button_enabler WRITE setText_Icon_Button_enabler NOTIFY text_Icon_Button_enablerChanged)
+
 public slots:
+    // Functions created to perform toggle action on each button
     void base_Button_Change();
     void text_Button_Change();
     void icon_Button_Change();
     void icon_Text_Button_Change();
+
 public:
     explicit button_base(QObject *parent = nullptr);
 
@@ -34,12 +39,11 @@ signals:
 
     void base_Button_enablerChanged();
     void text_Button_enablerChanged();
-
     void iocn_Button_enablerChanged();
-
     void text_Icon_Button_enablerChanged();
 
 private:
+
     bool m_base_Button_enabler=true;
     bool m_text_Button_enabler=true;
     bool m_iocn_Button_enabler=false;
